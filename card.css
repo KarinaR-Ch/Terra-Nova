@@ -1,0 +1,119 @@
+        .activities {
+            margin: 0;
+            padding: 150px 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #FFFED0;
+            font-family: Arial, sans-serif;
+            overflow-x: auto;
+        }
+
+        .cards-row {
+            display: flex;
+            gap: 40px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            min-width: max-content;
+        }
+
+        .card-container {
+            width: 250px;
+            height: 350px;
+            perspective: 1000px;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideIn 0.8s forwards;
+            flex-shrink: 0;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Затримка для кожної картки */
+        .card-container:nth-child(1) { animation-delay: 0.1s; }
+        .card-container:nth-child(2) { animation-delay: 0.3s; }
+        .card-container:nth-child(3) { animation-delay: 0.5s; }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            justify-content: center;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+            transform-origin: center;
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-front {
+            background-color: white;
+            transform: rotateY(0deg);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-back {
+            background-color: #92E6B8;
+            color: #18860F;
+            transform: rotateY(180deg);
+            padding: 25px;
+        }
+
+        .card-image {
+            height: 80%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card_caption {
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #5ba241;
+            color: white;
+            font-weight: bold;
+            padding: 0 15px 60px 15px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #18860F;
+        }
+
+        .card-text {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            color: #18860F;
+        }
+
+        .flipped {
+            transform: rotateY(180deg);
+        }

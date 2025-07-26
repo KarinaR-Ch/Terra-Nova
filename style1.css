@@ -1,0 +1,28 @@
+/* ============= START HEADER ============= */
+
+.header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2rem;
+    height: 100%;
+    padding-inline: var(--padding-1);
+}
+
+.header__logo {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
